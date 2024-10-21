@@ -1,7 +1,7 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
@@ -80,13 +80,17 @@ nav a:hover {
   cursor: pointer;
 }
 
-nav #close-1{
+nav .button-login {
+  display: none;
+}
+
+nav #close-1 {
   display: none;
   font-size: 2rem;
-    color: #000;
-    position: absolute;
-    top: 20px;
-    right: 7%;  
+  color: #000;
+  position: absolute;
+  top: 20px;
+  right: 7%;
 }
 
 .button-login .button {
@@ -103,7 +107,7 @@ nav #close-1{
   cursor: pointer;
 }
 
-.button-login a{
+.button-login a {
   color: #fff;
   text-decoration: none;
 }
@@ -164,6 +168,7 @@ nav #close-1{
 .button-login .sign svg path {
   fill: white;
 }
+
 .button-login .text {
   position: absolute;
   right: 0%;
@@ -175,6 +180,7 @@ nav #close-1{
   font-weight: 600;
   transition-duration: .3s;
 }
+
 .button-login .Btn:hover {
   width: 125px;
   border-radius: 40px;
@@ -195,7 +201,7 @@ nav #close-1{
 }
 
 .button-login .Btn:active {
-  transform: translate(2px ,2px);
+  transform: translate(2px, 2px);
 }
 
 #hamburger {
@@ -209,37 +215,41 @@ nav #close-1{
 /* Responsive */
 @media (max-width: 768px) {
   nav {
-      display: flex;
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 90%;
-      height: 100%;
-      background-color: #fff;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      z-index: 9998;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 90%;
+    height: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 9998;
   }
 
   nav.active {
-      left: 0; 
+    left: 0;
   }
 
-  nav #close-1{
+  .button-login .Btn {
+    margin-right: 30px;
+  }
+
+  nav #close-1 {
     display: block;
   }
 
   nav a {
-      padding: 10px 0;
-      width: 100%;
-      text-align: center;
-      border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #eee;
   }
 
   #hamburger {
-      display: block;
+    display: block;
   }
 
 }
@@ -248,52 +258,61 @@ nav #close-1{
   header {
     justify-content: space-around;
   }
+
   .logo img {
-      width: 100px;
+    width: 100px;
   }
 
-  .button-login .Btn{
-    margin-right: 10px;
+  .button-login {
+    display: none;
+  }
+
+  nav .button-login {
+    display: block;
   }
 
   .logo h1 {
-      font-size: 1em;
+    font-size: 1em;
   }
 }
 
 
+/* =========================
+         BLOG SECTION
+========================= */
+
 .blog-detail-page {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: 50%;
-    margin: 150px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin: 150px auto;
 }
 
 .blog-detail-page h1 {
-    font-size: 2.5em;
-    word-wrap: break-word;
-    margin-bottom: 10px;
+  font-size: 2.5em;
+  word-wrap: break-word;
+  margin-bottom: 10px;
 }
 
 .blog-detail-page p {
-    font-size: 1.2em;
-    color: #555;
-    word-wrap: break-word;
-    margin-bottom: 20px;
+  font-size: 1.2em;
+  color: #555;
+  word-wrap: break-word;
+  margin-bottom: 20px;
 }
 
 .back-to-blogs {
-    display: inline-block;
-    margin-top: 20px;
-    color: #007bff;
-    text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: none;
 }
 
 @media (max-width: 769px) {
-    .blog-detail-page {
-        width: 90%;
-        margin: 100px auto;
-    }
+  .blog-detail-page {
+    width: 90%;
+    margin: 100px auto;
+  }
 }
