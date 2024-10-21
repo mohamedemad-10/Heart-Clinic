@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="./assists/css-image/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="./assists/css-image/image/logo.png" alt="Logo" draggable="false">
+            <h1>Mag <span>CLINIC</span></h1>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Health Library</a>
+            <a href="#">Medical Professionals</a>
+            <a href="#">Donation</a>
+        </nav>
+
+        <i class="fa-solid fa-bars-staggered hamburger" id="hamburger"></i>
+
+        <div class="button-login">
+            <button class="button" id="loginButton" onclick="window.location.href='login.html';">
+                <span class="button-content">Log in </span>
+            </button>
+        </div>
+    </header>
+
+    <section id="contact-page">
+        <div class="contact-container">
+            <div class="contact-form-container">
+                <h2>Contact Us</h2>
+                <form id="contact-form" class="contact-form" method="POST" onsubmit="sendEmail(event)">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="contact-submit-button">Send Message</button>
+                </form>
+                <div id="response-message"></div>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="100%" style="border:0;"
+                    allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+
+        (function () {
+            emailjs.init("Ewu-lESvrdECH4xdP");
+        })();
+
+        function sendEmail(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('contact-form');
+
+            emailjs.sendForm('service_harxgyb', 'template_axo5wdi', form)
+                .then(() => {
+                    document.getElementById('response-message').innerText = 'Email sent successfully!';
+                    form.reset();
+                }, (error) => {
+                    document.getElementById('response-message').innerText = 'Failed to send email: ' + JSON.stringify(error);
+                });
+        }
+
+
+    </script>
+
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function () {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        });
+    </script>
+
+</body>
+
+</html>

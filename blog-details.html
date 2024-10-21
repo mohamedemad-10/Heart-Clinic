@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Details</title>
+     <link rel="stylesheet" href="./assists/css-image/blog-details.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+
+    <header>
+        <div class="logo">
+            <img src="./assists/css-image/image/logo.png" alt="Logo" draggable="false">
+            <h1>Mag <span>CLINIC</span></h1>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Health Library</a>
+            <a href="#">Medical Professionals</a>
+            <a href="#">Donation</a>
+        </nav>
+
+        <i class="fa-solid fa-bars-staggered hamburger" id="hamburger"></i>
+
+        <div class="button-login">
+            <button class="button" id="loginButton" onclick="window.location.href='login.html';">
+                <span class="button-content">Log in </span>
+            </button>
+        </div>
+    </header>
+
+
+    <section class="blog-detail-page">
+        <h1 id="detailedBlogTitle">Blog Title</h1>
+        <p id="detailedBlogDate">Date</p>
+        <p id="detailedBlogContent">This is where the detailed content of the blog will be displayed based on what the
+            user clicked on the main page.</p>
+        <a href="../index.html" class="back-to-blogs">Back to Blogs</a>
+    </section>
+
+    <script src="./assists/js/blog-details.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Login</title>
+    <link rel="stylesheet" href="./assists/css-image/login.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="./assists/css-image/image/logo.png" alt="Logo" draggable="false" />
+            <h1>Mag <span>CLINIC</span></h1>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#librarySection">Health Library</a>
+            <a href="#Medical">Medical Professionals</a>
+            <a href="#blog">Blog</a>
+        </nav>
+        <i class="fa-solid fa-bars-staggered hamburger" id="hamburger"></i>
+        <div class="button-login">
+            <button class="button" id="loginButton" onclick="window.location.href='login.html';">
+                <span class="button-content">Log in </span>
+            </button>
+        </div>
+
+    </header>
+    
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="id">ID:</label>
+                <input type="text" id="id" name="id" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit">Login</button>
+            <p id="message" class="message"></p>
+        </form>
+    </div>
+
+    <script src="./assists/js/login.js"></script>
+</body>
+</html>
