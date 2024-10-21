@@ -14,6 +14,9 @@ body {
     overflow-x: hidden;
 }
 
+/* ========================
+         NAVBAR 
+========================= */
 header {
     display: flex;
     width: 100%;
@@ -22,62 +25,71 @@ header {
     align-items: center;
     position: fixed;
     z-index: 9999;
-    padding: 0 20px;
+    /* padding: 0px 20px; */
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
+    margin: auto;
+  }
+  
+  .logo {
     display: flex;
     align-items: center;
-    gap: 5px;
-}
-
-.logo img {
+  }
+  
+  .logo img {
     width: 130px;
-}
-
-.logo h1 {
+  }
+  
+  .logo h1 {
     font-size: 1.5em;
     font-weight: bold;
     color: #007BFF;
     transition: all 0.4s ease;
-}
-
-.logo h1 span {
+  }
+  
+  .logo h1 span {
     color: #000;
     transition: all 0.4s ease;
-}
-
-.logo h1:hover span {
+  }
+  
+  .logo h1:hover span {
     color: #4400FF;
     cursor: pointer;
-}
-
-.logo h1:hover {
+  }
+  
+  .logo h1:hover {
     color: #000;
     cursor: pointer;
-}
-
-nav {
+  }
+  
+  nav {
     display: flex;
     align-items: center;
     gap: 15px;
-}
-
-nav a {
+  }
+  
+  nav a {
     text-decoration: none;
     color: #333;
     transition: all 0.4s ease;
     font-weight: 500;
-}
-
-nav a:hover {
+  }
+  
+  nav a:hover {
     color: #4400FF;
     cursor: pointer;
-}
-
-.button-login .button {
+  }
+  
+  nav #close-1{
+    display: none;
+    font-size: 2rem;
+      color: #000;
+      position: absolute;
+      top: 20px;
+      right: 7%;  
+  }
+  
+  .button-login .button {
     position: relative;
     overflow: hidden;
     margin-right: 60px;
@@ -89,23 +101,23 @@ nav a:hover {
     color: #fff;
     border: none;
     cursor: pointer;
-}
-
-.button-login a {
+  }
+  
+  .button-login a{
     color: #fff;
     text-decoration: none;
-}
-
-.button-login .button:hover::before {
+  }
+  
+  .button-login .button:hover::before {
     transform: scaleX(1);
-}
-
-.button-login .button-content {
+  }
+  
+  .button-login .button-content {
     position: relative;
     z-index: 1;
-}
-
-.button-login .button::before {
+  }
+  
+  .button-login .button::before {
     content: "";
     position: absolute;
     top: 0;
@@ -117,24 +129,91 @@ nav a:hover {
     border-radius: inherit;
     background-color: #007aff;
     transition: all 0.475s;
-}
-
-#hamburger {
+  }
+  
+  .button-login .Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
     display: none;
-    font-size: 2em;
+    margin-right: 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(5, 65, 65);
+  }
+  
+  .button-login .sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button-login .sign svg {
+    width: 17px;
+  }
+  
+  .button-login .sign svg path {
+    fill: white;
+  }
+  .button-login .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    top: 10px;
+    opacity: 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+  }
+  .button-login .Btn:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+  }
+  
+  .button-login .Btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+  }
+  
+  .button-login .Btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+  }
+  
+  .button-login .Btn:active {
+    transform: translate(2px ,2px);
+  }
+  
+  #hamburger {
+    display: none;
+    font-size: 1.3em;
     color: #000;
     cursor: pointer;
     margin: 0 auto;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
     nav {
         display: flex;
         position: fixed;
         top: 0;
         left: -100%;
-        width: 100%;
+        width: 90%;
         height: 100%;
         background-color: #fff;
         flex-direction: column;
@@ -143,38 +222,45 @@ nav a:hover {
         transition: all 0.3s ease;
         z-index: 9998;
     }
-
+  
     nav.active {
         left: 0; 
     }
-
+  
+    nav #close-1{
+      display: block;
+    }
+  
     nav a {
         padding: 10px 0;
         width: 100%;
         text-align: center;
         border-bottom: 1px solid #eee;
     }
-
+  
     #hamburger {
         display: block;
     }
-
+  
+  }
+  
+  @media (max-width: 480px) {
     header {
-        height: 60px; 
-        padding: 0 10px; 
+      justify-content: space-around;
     }
-}
-
-@media (max-width: 480px) {
     .logo img {
         width: 100px;
     }
-
-    .logo h1 {
-        font-size: 1.2em;
+  
+    .button-login .Btn{
+      margin-right: 10px;
     }
-}
-
+  
+    .logo h1 {
+        font-size: 1em;
+    }
+  }
+  
 .login-container {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);

@@ -97,11 +97,20 @@ updateDoctorDetails(doctorId);
 
         // Check if the user is logged in
         const loginButton = document.getElementById('loginButton');
+        const logout = document.getElementById('logout');
         const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
+
         if (isLoggedIn) {
-            loginButton.textContent = 'Logout';
+            // loginButton.textContent = 'Log out';
+            logout.style.display = 'block';
+            loginButton.style.display = 'none'            
             loginButton.href = '#';
+            loginButton.addEventListener('click', () => {
+                // Clear login status and reload the page
+                localStorage.removeItem('isLoggedIn');
+                window.location.reload();
+            });
             loginButton.addEventListener('click', () => {
                 // Clear login status and reload the page
                 localStorage.removeItem('isLoggedIn');
@@ -117,4 +126,15 @@ updateDoctorDetails(doctorId);
             const nav = document.querySelector('nav');
             nav.classList.toggle('active');
         });
+        
+        const closeButton = document.querySelector('.fa-solid.fa-xmark');
+        // closeButton.style.display ='none';
+        
+        if (closeButton) {
+            closeButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                const nav = document.querySelector('nav');
+                nav.classList.remove('active');
+            });
+        }
         

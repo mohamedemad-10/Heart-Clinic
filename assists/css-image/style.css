@@ -25,7 +25,7 @@ header {
   align-items: center;
   position: fixed;
   z-index: 9999;
-  padding: 0px 20px;
+  /* padding: 0px 20px; */
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: auto;
@@ -34,7 +34,6 @@ header {
 .logo {
   display: flex;
   align-items: center;
-  gap: 5px;
 }
 
 .logo img {
@@ -139,6 +138,7 @@ nav #close-1{
   width: 45px;
   height: 45px;
   display: none;
+  margin-right: 30px;
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -245,12 +245,19 @@ nav #close-1{
 }
 
 @media (max-width: 480px) {
+  header {
+    justify-content: space-around;
+  }
   .logo img {
       width: 100px;
   }
 
+  .button-login .Btn{
+    margin-right: 10px;
+  }
+
   .logo h1 {
-      font-size: 1.2em;
+      font-size: 1em;
   }
 }
 

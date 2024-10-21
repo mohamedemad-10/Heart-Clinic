@@ -38,3 +38,14 @@
             nav.classList.toggle('active');
         });
         
+        const closeButton = document.querySelector('.fa-solid.fa-xmark');
+        // closeButton.style.display ='none';
+        
+        if (closeButton) {
+            closeButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                const nav = document.querySelector('nav');
+                nav.classList.remove('active');
+            });
+        }
+        

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link  rel="shortcut icon" href="./assists/css-image/image/logo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -20,6 +21,7 @@
         </div>
 
         <nav>
+            <i class="fa-solid fa-xmark" id="close-1"></i>
             <a href="index.html">Home</a>
             <a href="#">Health Library</a>
             <a href="#">Medical Professionals</a>
@@ -31,6 +33,17 @@
         <div class="button-login">
             <button class="button" id="loginButton" onclick="window.location.href='login.html';">
                 <span class="button-content">Log in </span>
+            </button>
+
+            <button class="Btn" id="logout" onclick="window.location.href='login.html';">
+
+                <div class="sign"><svg viewBox="0 0 512 512">
+                        <path
+                            d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
+                        </path>
+                    </svg></div>
+
+                <div class="text">Logout</div>
             </button>
         </div>
     </header>
@@ -83,6 +96,46 @@
             const nav = document.querySelector('nav');
             nav.classList.toggle('active');
         });
+
+        const closeButton = document.querySelector('.fa-solid.fa-xmark');
+        // closeButton.style.display ='none';
+
+        if (closeButton) {
+            closeButton.addEventListener('click', function (event) {
+                event.preventDefault();
+                const nav = document.querySelector('nav');
+                nav.classList.remove('active');
+            });
+        }
+
+    </script>
+
+    <script>
+        const loginButton = document.getElementById('loginButton');
+        const logout = document.getElementById('logout');
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+
+        if (isLoggedIn) {
+            // loginButton.textContent = 'Log out';
+            logout.style.display = 'block';
+            loginButton.style.display = 'none'
+            loginButton.href = '#';
+            loginButton.addEventListener('click', () => {
+                // Clear login status and reload the page
+                localStorage.removeItem('isLoggedIn');
+                window.location.reload();
+            });
+            loginButton.addEventListener('click', () => {
+                // Clear login status and reload the page
+                localStorage.removeItem('isLoggedIn');
+                window.location.reload();
+            });
+        } else {
+            loginButton.textContent = 'Login';
+            loginButton.href = 'login.html';
+        }
+
     </script>
 
 </body>
