@@ -1,7 +1,7 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 html,
@@ -81,13 +81,17 @@ nav a:hover {
   cursor: pointer;
 }
 
-nav #close-1{
+nav .button-login {
+  display: none;
+}
+
+nav #close-1 {
   display: none;
   font-size: 2rem;
-    color: #000;
-    position: absolute;
-    top: 20px;
-    right: 7%;  
+  color: #000;
+  position: absolute;
+  top: 20px;
+  right: 7%;
 }
 
 .button-login .button {
@@ -104,7 +108,7 @@ nav #close-1{
   cursor: pointer;
 }
 
-.button-login a{
+.button-login a {
   color: #fff;
   text-decoration: none;
 }
@@ -165,6 +169,7 @@ nav #close-1{
 .button-login .sign svg path {
   fill: white;
 }
+
 .button-login .text {
   position: absolute;
   right: 0%;
@@ -176,6 +181,7 @@ nav #close-1{
   font-weight: 600;
   transition-duration: .3s;
 }
+
 .button-login .Btn:hover {
   width: 125px;
   border-radius: 40px;
@@ -196,7 +202,7 @@ nav #close-1{
 }
 
 .button-login .Btn:active {
-  transform: translate(2px ,2px);
+  transform: translate(2px, 2px);
 }
 
 #hamburger {
@@ -210,37 +216,41 @@ nav #close-1{
 /* Responsive */
 @media (max-width: 768px) {
   nav {
-      display: flex;
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 90%;
-      height: 100%;
-      background-color: #fff;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      z-index: 9998;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 90%;
+    height: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 9998;
   }
 
   nav.active {
-      left: 0; 
+    left: 0;
   }
 
-  nav #close-1{
+  .button-login .Btn {
+    margin-right: 30px;
+  }
+
+  nav #close-1 {
     display: block;
   }
 
   nav a {
-      padding: 10px 0;
-      width: 100%;
-      text-align: center;
-      border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #eee;
   }
 
   #hamburger {
-      display: block;
+    display: block;
   }
 
 }
@@ -249,111 +259,121 @@ nav #close-1{
   header {
     justify-content: space-around;
   }
+
   .logo img {
-      width: 100px;
+    width: 100px;
   }
 
-  .button-login .Btn{
-    margin-right: 10px;
+  .button-login {
+    display: none;
+  }
+
+  nav .button-login {
+    display: block;
   }
 
   .logo h1 {
-      font-size: 1em;
+    font-size: 1em;
   }
 }
 
 
-/* Doctor Details Section */
+/* ========================
+      Doctor Details
+========================= */
 .doctor-details-section {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    align-items: center;
-    margin: 120px auto;
-    width: 85%;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  align-items: center;
+  margin: 120px auto;
+  width: 85%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Doctor Info Styles */
 .doctor-info {
-    flex: 1;
-    max-width: 400px;
-    text-align: center;
+  flex: 1;
+  max-width: 400px;
+  text-align: center;
 }
 
 .doctor-image {
-    width: 100%;
-    height: 400px;
-    border-radius: 50%;
-    border: 4px solid #4CAF50;
-    margin-bottom: 20px;
+  width: 100%;
+  height: 400px;
+  border-radius: 50%;
+  border: 4px solid #4CAF50;
+  margin-bottom: 20px;
 }
 
 .doctor-name {
-    font-size: 24px;
-    margin: 10px 0;
+  font-size: 24px;
+  margin: 10px 0;
 }
 
-.doctor-specialty, .doctor-age, .doctor-appointments {
-    font-size: 18px;
-    margin: 5px 0;
+.doctor-specialty,
+.doctor-age,
+.doctor-appointments {
+  font-size: 18px;
+  margin: 5px 0;
 }
 
 /* Booking Form Styles */
 .booking-form {
-    flex: 1;
-    max-width: 400px;
-    height: 440px;
-    align-items: center;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  max-width: 400px;
+  height: 440px;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .booking-form h3 {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .booking-form label {
-    display: block;
-    margin: 10px 0 5px;
+  display: block;
+  margin: 10px 0 5px;
 }
 
 .booking-form input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .booking-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .booking-form button:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .doctor-details-section {
-        flex-direction: column;
-        align-items: center;
-    }
+  .doctor-details-section {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .doctor-info, .booking-form {
-        max-width: 90%;
-        margin-bottom: 20px;
-    }
+  .doctor-info,
+  .booking-form {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
 }
